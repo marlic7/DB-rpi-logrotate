@@ -1,0 +1,9 @@
+logrotate:
+  image: "marlic/rpi-logrotate:3.9.1-1"
+  volumes:
+    - /var/lib/docker/containers:/var/lib/docker/containers
+  restart: always
+  environment:
+    - LOGS_DIRECTORIES=/var/lib/docker/containers
+    - LOGROTATE_COPIES=365
+    - LOGROTATE_COMPRESSION=compress                                          
